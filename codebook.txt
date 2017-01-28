@@ -1,0 +1,154 @@
+JAVA
+
+System.out.printf("%d %s and  %.1f\n", 10 , "cats", 0.52  ); 
+// 10 cats and 0.5
+
+ArrayList <Integer> al = new ArrayList<Integer>();
+// add(E e), remove(E e)
+// get(int i), size(), toArray()
+// contain(E e), isEmpty();
+
+Aja matrix
+ArrayList<ArrayList<Integer> > 
+
+Queue<Integer>
+// add(), peek(), poll()
+
+Stack<Integer>
+// push(), pop(), peek(), 
+
+HashMap<K, V>
+HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+// put(Key k, Value v), get(Key k), remov(Key k)
+// containsKey(O o), isEmpty(), size()
+// keySet()
+
+
+Set<>
+Set<Integer> set = new HashSet<Integer>();
+// size(), isEmpty(), contains(O o), add(O o)
+// remove(O o), iterator() 
+
+Sort objects
+class Book implements Comparable<Book>(){
+       public int compareTo(Book o)
+}
+Arrays.sort(books);
+
+Iterator itr
+ArrayList<Integer> al = new ArrayList();
+itr = al.interator();
+while (iterator.hasNext()) {
+        Thing t = iterator.next();
+            // Use `t`
+}
+
+//Bitwise operation
+a = 0011 1100
+
+b = 0000 1101
+
+-----------------
+
+a&b = 0000 1100 // and
+
+a|b = 0011 1101 // or
+
+a^b = 0011 0001 // xor
+
+~a  = 1100 0011 // not
+
+<< left shift, >> right shift
+
+Regex
+// String to be scanned to find the pattern.
+String line = "This order was placed for QT3000! OK?";
+String pattern = "(.*)(\\d+)(.*)";
+// Create a Pattern object
+Pattern r = Pattern.compile(pattern);
+
+// Now create matcher object.
+Matcher m = r.matcher(line);
+if (m.find( )) {
+   System.out.println("Found value: " + m.group(0) );
+   System.out.println("Found value: " + m.group(1) );
+   System.out.println("Found value: " + m.group(2) );
+}
+
+
+
+MATH
+
+Combinations
+n!/r!(n-r)!
+
+Permutations
+n!/(n-r)!
+
+Prime numbers
+set array to all true
+for (int factor = 2; factor*factor <= n; factor++) {
+  if (isPrime[factor]) {
+     for (int j = factor; factor*j <= n; j++) {
+       isPrime[factor*j] = false;
+    }
+  } 
+}
+
+binary search
+// binary search on sorted array
+public static boolean find(int a, int [] arr){
+    int lb= 0;
+    int ub= arr.length -1;
+    int mid =(lb + ub)/2;
+    while(lb <= ub){
+         if(arr[mid] == a)
+         return true;
+         else if(a > arr[mid]){
+         lb = mid + 1;
+         }
+         else{
+         ub = mid -1;
+         }
+         mid = (lb + ub)/2;
+     }
+     return false;
+}
+
+
+//Shortest path, floydWarshall
+double[][] graph;
+// initialize graph, each vertex to itself is 0
+// have the relations value, and everything set to infinity
+// Double.POSITIVE_INFINITY;
+public double[][] floydWarshall() {
+    double[][] distances;
+    int n = this.graph.length;
+    distances = Arrays.copyOf(this.graph, n);
+
+    for (int k = 0; k < n; k++) {
+	for (int i = 0; i < n; i++) {
+	    for (int j = 0; j < n; j++) {
+		distances[i][j] = Math.min(distances[i][j],
+		    distances[i][k] + distances[k][j]);
+	    }
+	}
+
+	if (distances[k][k] < 0.0) {
+	    this.negativeCycle = true;
+	}
+    }
+
+    return distances;
+}
+
+// change making problem
+// how can a given amount of money be made with the least numberof
+//coins of given denominations?
+
+solution = [coins][amount]
+    // have a base case
+    // at position i look left, look up, look left up
+
+
+
